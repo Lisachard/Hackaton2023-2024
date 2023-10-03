@@ -10,7 +10,7 @@
       <h1>Hello, Bootstrap and Webpack!</h1>
       <button class="btn btn-primary">Primary button</button>
       <?php 
-          include("footer.html"); 
+          include("footer.php"); 
       ?>
     </div>
   </body>
