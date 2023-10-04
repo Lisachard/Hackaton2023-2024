@@ -4,20 +4,32 @@ const client = new Client({});
 require('dotenv').config()
 
 const express = require("express");
+const mysql = require("mysql");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 
-let users = [{ email: "test@gmail.com", password: "test", name: "Chevalier", firstName: "Théo" }];
+let con = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
+
+con.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected to the database");
+});
+
+//let users = [{ email: "test@gmail.com", password: "test", name: "Chevalier", firstName: "Théo" }];
 
 router.post("/signup", async (req, res) => {
-    //Inscription
-    var found = users.find(x => x.email === req.body.email)
-    if (found === undefined) {
-        users.push(req.body)
-        res.send("User created")
-    }
-    else {
-        res.send("User already exist")
-    }
+    //Inscription parametre email password nom prenom
+    let query = `SELECT * FROM client WHERE email = ` + mysql.escape(req.body.email);
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
 });
 router.post("/signin", async (req, res) => {
     //Connexion
@@ -46,10 +58,10 @@ router.get("/ridesInsideRadius", async (req, res) => {
     // 47.205997467041016 -1.538791537284851
     let center = req.body.center;
     let radius = req.body.radius;
-    //let distance = utilities.distance(47.210079, -1.5472952, 47.205997467041016, -1.538791537284851);
     client.geocode({
         params: {
             address: center,
+            radius: radius,
             key: process.env.GOOGLE_API_KEY,
         },
         timeout: 1000, // milliseconds
@@ -58,14 +70,14 @@ router.get("/ridesInsideRadius", async (req, res) => {
         console.log(center);
         let distanceT = distance(center.lat, center.lng, 47.2101169, -1.5491591);
         console.log(distanceT);
-        res.send((distanceT ).toString());
+        res.send((distanceT).toString());
         //res.send(r.data.results[0].geometry.location);
     }).catch((e) => {
         console.log(e.response.data.error_message);
     });
 });
 router.get("/autocomplete", async (req, res) => {
-    let input = req.body.input; 
+    let input = req.body.input;
     client.placeAutocomplete({
         params: {
             input: input,
@@ -107,6 +119,8 @@ const distance = (lat1, lon1, lat2, lon2) => //https://www.geeksforgeeks.org/pro
     return (c * r);
 }
 
-
+function generateAccessToken(username) {
+    return jwt.sign(username, process.env.TOKEN_SECRET, { expiresIn: '1800s' });
+}
 
 module.exports = router;
