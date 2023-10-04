@@ -18,7 +18,7 @@ p {
 .header {
   position: relative;
   text-align: center;
-  background: linear-gradient(60deg, rgba(84, 58, 199, 1) 0%, rgba(163, 60, 222, 1) 100%);
+  background: linear-gradient(60deg, rgba(84, 58, 199, 1) 0%, rgb(179, 100, 224) 100%);
   color: rgba(240, 128, 87, 0.816);
 }
 
