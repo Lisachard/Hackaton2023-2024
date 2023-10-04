@@ -6,13 +6,14 @@ require('dotenv').config()
 const express = require("express");
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 const router = express.Router();
 
 let con = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DATABASE
 });
 
 con.connect(function (err) {
@@ -20,31 +21,36 @@ con.connect(function (err) {
     console.log("Connected to the database");
 });
 
-//let users = [{ email: "test@gmail.com", password: "test", name: "Chevalier", firstName: "Théo" }];
-
 router.post("/signup", async (req, res) => {
     //Inscription parametre email password nom prenom
     let query = `SELECT * FROM client WHERE email = ` + mysql.escape(req.body.email);
     con.query(query, function (err, result, fields) {
         if (err) throw err;
-        console.log(result);
-        res.send(result);
+        if (result.length > 0) {
+            res.send("User already exists");
+        }
+        else {
+            query = `INSERT INTO client (email, mot_de_passe, last_name, first_name) VALUES (` + mysql.escape(req.body.email) + `, ` + mysql.escape(bcrypt.hashSync(req.body.password, 8)) + `, ` + mysql.escape(req.body.name) + `, ` + mysql.escape(req.body.firstName) + `)`;
+            con.query(query, function (err, result, fields) {
+                if (err) throw err;
+            })
+            console.log("User created");
+            res.send(result);
+        }
     });
 });
 router.post("/signin", async (req, res) => {
     //Connexion
-    var found = users.find(x => x.email === req.body.email)
-    if (found === undefined) {
-        users.push(req.body)
-        res.send("User doesn't exist")
-    }
-    else {
-        res.send("Connected")
-    }
 });
 router.post("/publish", async (req, res) => {
-    // Parametre Adresse Heure date Nb de passagers
-    res.send("Trajet publié");
+    // Parametre Adresse Heure date Nb de passagers Direction
+    for (const [key, value] of Object.entries(req.body)) {
+        if(`${value}` === undefined) res.send("Missing parameter");
+        else {
+            let query = `INSERT INTO trajet (adresse, heure, date, nb_passagers, direction) VALUES (` + mysql.escape(req.body.addresse) + `, ` + mysql.escape(req.body.heure) + `, ` + mysql.escape(req.body.date_trajet) + `, ` + mysql.escape(req.body.direction) + `)`;
+            res.send("Trajet publié");
+        } 
+    }
 });
 router.delete("/deleteRide", async (req, res) => {
     // Supprimer un trajet
