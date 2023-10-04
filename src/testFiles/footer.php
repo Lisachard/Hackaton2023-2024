@@ -2,4 +2,4 @@
 
 document.write("<h1>Main title</h1>"); -->
 
-<body><p>Hello<p></body>
+<p>Hello<p>
