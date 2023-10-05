@@ -1,7 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
   font-size: 48px;
@@ -9,7 +9,7 @@ h1 {
 }
 
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   letter-spacing: 1px;
   font-size: 14px;
   color: #333333;
@@ -18,13 +18,17 @@ p {
 .header {
   position: relative;
   text-align: center;
-  background: linear-gradient(60deg, rgba(84, 58, 199, 1) 0%, rgb(179, 100, 224) 100%);
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 199, 1) 0%,
+    rgb(179, 100, 224) 100%
+  );
   color: rgba(240, 128, 87, 0.816);
 }
 
 .logo {
   width: 70px;
-  fill: white; 
+  fill: white;
   padding-right: 15px;
   display: inline-block;
   vertical-align: middle;
@@ -37,11 +41,35 @@ p {
   padding: 0;
 }
 
+.borderedTitle {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.borderedTitle:hover {
+  border-color: white;
+}
+
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.auth-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.auth-button:hover {
+  background-color: #0056b3;
 }
 
 .waves {
@@ -60,26 +88,26 @@ p {
   background-color: white;
 }
 
-.parallax>use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
-.parallax>use:nth-child(1) {
+.parallax > use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 7s;
 }
 
-.parallax>use:nth-child(2) {
+.parallax > use:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 10s;
 }
 
-.parallax>use:nth-child(3) {
+.parallax > use:nth-child(3) {
   animation-delay: -4s;
   animation-duration: 13s;
 }
 
-.parallax>use:nth-child(4) {
+.parallax > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
 }
