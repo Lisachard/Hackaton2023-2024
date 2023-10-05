@@ -12,10 +12,10 @@
 <body>
     <form action="traitement.php" method="post">
         <div class="flex">
-            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
 
-            <input type="text" id="firstname" name="firstname" placeholder="Firstname" required>
-            
+            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+
             <input type="mail" id="email" name="email" placeholder="Email" required>
 
             <input type="text" id="password" name="password" placeholder="Password" required>
