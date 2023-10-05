@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Footer</title>
-    <link rel="stylesheet" href="assets/style/commonStyle.css">
-    <link rel="stylesheet" href="/src/assets/style/footer.css">
+    <link rel="stylesheet" href="./assets/style/commonStyle.css">
+    <link rel="stylesheet" href="./assets/style/footer.css">
 </head>
 
 <section class=footer>

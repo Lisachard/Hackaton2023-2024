@@ -12,9 +12,9 @@ require_once './footer.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Main page</title>
     <link rel="icon" type="image/png" href="/Annex/Logo/Nudge logo.png">
-    <link rel="stylesheet" href="assets/style/commonStyle.css">
-    <link rel="stylesheet" href="assets/style/mainPage.css">
-    <link rel="stylesheet" href="assets/style/footer.css">
+    <link rel="stylesheet" href="./assets/style/commonStyle.css">
+    <link rel="stylesheet" href="./assets/style/mainPage.css">
+    <link rel="stylesheet" href="./assets/style/footer.css">
 
 </head>
 

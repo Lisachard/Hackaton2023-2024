@@ -1,5 +1,4 @@
 .footer {
-<<<<<<< HEAD
   padding: 20px 0;
   position: absolute;
   left: 0;
@@ -9,26 +8,9 @@
 }
 
 .footerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
-    font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-size: small;
 }
-=======
-    padding: 20px 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-  }
-  
-  .footerContainer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 50px;
-      font-size: small;
-  }
->>>>>>> d7e996ef09ef5741da908abc3af1a651d3935ab2

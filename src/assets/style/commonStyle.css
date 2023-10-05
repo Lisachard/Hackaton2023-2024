@@ -1,22 +1,22 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
-    width: 100%;
-    height: 100vh;
-    overflow-y: hidden;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .links a {
-    font-size: 24px;
-    text-decoration: none;
-    transition: .6s;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.6s;
 }
 
 .links a:hover {
-    color: gold;
+  color: gold;
 }
