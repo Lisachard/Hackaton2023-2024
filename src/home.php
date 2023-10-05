@@ -13,7 +13,7 @@ require_once './footer.php';
     <title>Main page</title>
     <link rel="icon" type="image/png" href="/Annex/Logo/Nudge logo.png">
     <link rel="stylesheet" href="./assets/style/commonStyle.css">
-    <link rel="stylesheet" href="./assets/style/mainPage.css">
+    <link rel="stylesheet" href="./assets/style/home.css">
     <link rel="stylesheet" href="./assets/style/footer.css">
 
 </head>
@@ -27,7 +27,7 @@ require_once './footer.php';
         </div>
 
         <div>
-            <a href="votre-page-de-redirection.html" class="auth-button">S'authentifier</a>
+            <a href="authentificationUser.php" class="auth-button">S'authentifier</a>
         </div>
 
         <div>

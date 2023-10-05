@@ -11,7 +11,7 @@ $jsonData = json_encode($data);
 
 $options = array(
     'http' => array(
-        'method' => 'POST',
+        'method' => 'GET',
         'header' => 'Content-type: application/json\r\n' . "Authorization: " . $valeur_cookie,
         'content' => $jsonData
     )
