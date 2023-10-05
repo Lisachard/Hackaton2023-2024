@@ -1,3 +1,6 @@
+const { Client } = require('@googlemaps/google-maps-services-js');
+const client = new Client({});
+
 const express = require("express");
 const router = express.Router();
 
@@ -10,10 +13,10 @@ const authenticateToken = require("../middlewares/authentificateToken");
 const utilities = require("../utilities");
 
 let con = mysql.createConnection({ //Necessary informations to connect to the database, doens't take .env variables for a reason
-    host: "192.168.0.31",
-    user: "Pierre",
-    password: "Lepetoc",
-    database: "client"
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 });
 
 con.connect(function (err) { //Connect to the database
@@ -74,7 +77,10 @@ router.delete("/deleteRide", authenticateToken, async (req, res) => {  //Route t
 });
 router.get("/rides", authenticateToken, async (req, res) => {  //Route to get all rides
     let query = `SELECT * FROM trajet`;
-    res.send("Trajets");
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        res.send(result);
+    });
 });
 router.get("/ridesInsideRadius", authenticateToken, async (req, res) => { //Route to get all rides from a user defined center point inside a radius
     // Recuperer les trajets dans un rayon
@@ -97,11 +103,17 @@ router.get("/autocomplete", authenticateToken, async (req, res) => { //Route use
         },
         timeout: 1000, // milliseconds
     }).then((r) => {
-        console.log(r.data.predictions);
+        //console.log(r.data.predictions);
         res.send(r.data.predictions);
     }).catch((e) => {
         console.log(e.response.data.error_message);
     })
 });
-
+router.get("/user", authenticateToken, async (req, res) => { //Route to get user informations
+    let query = `SELECT first_name, last_name, email, adress, phone_number FROM client WHERE email = ` + mysql.escape(req.user.email);
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        res.send(result[0]);
+    });
+});
 module.exports = router;

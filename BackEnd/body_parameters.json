@@ -16,8 +16,6 @@
         "direction": true
     },
     "rides": {
-        "param1": "",
-        "param2": ""
     },
     "ridesInsideRadius": {
         "center": "",
@@ -25,5 +23,7 @@
     },
     "autocomplete": {
         "input": ""
+    },
+    "user": {
     }
 }
