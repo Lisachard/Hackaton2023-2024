@@ -27,6 +27,33 @@ include './components/footer.php';
                     rgb(179, 100, 224) 100%);
         }
 
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bonhomme {
+            height: 50px;
+            width: 50px;
+            color: grey;
+        }
+
+        .vert {
+            color: palegreen;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+        }
+
         #carte {
             height: 400px;
             right: 0;
@@ -37,6 +64,34 @@ include './components/footer.php';
 
 <body>
     <div id="carte"></div>
+
+    <div class="flex-column">
+        <div class="card">
+            <span>Anne</span>
+            <span>Départ : 20 Boulevard du Général de Gaulle, 12/03/2020 12h</span>
+            <span>Destination : 6 Boulevard Adolphe Billault, 12/03/2020 12h05</span>
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+        </div>
+        <div class="card">
+            <span>Baptiste</span>
+            <span>Départ : 20 Boulevard du Général de Gaulle, 06/03/2014 17h</span>
+            <span>Destination : 14 Cité du Soleil Levant, 08/03/2016 18h30</span>
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+        </div>
+        <div class="card">
+            <span>Anne</span>
+            <span>Départ : 67ter Route Nationale, 12/06/2020 12h</span>
+            <span>Destination : 20 Boulevard du Général de Gaulle, 01/10/2052 16h</span>
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+        </div>
+    </div>
 </body>
 
 </html>
