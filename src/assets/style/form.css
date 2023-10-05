@@ -1,20 +1,37 @@
 form {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: fixed;
     width: auto;
     height: auto;
-}
-
-label,
-input,
-button {
+  }
+  
+  .flex {
+    padding: 2rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: blue;
+  }
+  
+  .h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  label,
+  input,
+  button {
+    height: 2rem;
     padding: 0.5rem;
     border-radius: 15px;
     display: inline-block;
     vertical-align: middle;
     border: none;
     background-color: rgb(27, 125, 211);
-    box-shadow: 0 0 3px 2px #fff;
-}
+    -webkit-box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.47);
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.47);
+  }
