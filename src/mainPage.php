@@ -22,9 +22,7 @@
         </div>
 
         <div>
-            <p>Cliquez sur le lien ci-dessous pour être redirigé :</p>
-            <a href="#">Publier un trajet</a>
-            <a href="#">Rechercher un trajet</a>
+            <a href="votre-page-de-redirection.html" class="auth-button">S'authentifier</a>
         </div>
 
         <div>

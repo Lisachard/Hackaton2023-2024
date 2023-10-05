@@ -1,0 +1,20 @@
+form {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+label,
+input,
+button {
+    padding: 0.5rem;
+    border-radius: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    background-color: rgb(27, 125, 211);
+    box-shadow: 0 0 3px 2px #fff;
+}
