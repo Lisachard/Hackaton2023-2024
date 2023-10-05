@@ -4,7 +4,7 @@ create table trajet (
 	heure VARCHAR(50),
 	date_trajet VARCHAR(50),
 	client VARCHAR(50),
-	direction Boolean(50)
+	direction tinyint(1)
 );
 insert into trajet (id, adresse, heure, date_trajet, client, direction) values (1, '13 Avenue De Coislin', '', '', 'Aubree Springer', '');
 insert into trajet (id, adresse, heure, date_trajet, client, direction) values (2, '25 Rue Des Rosiers', '', '', 'Rockwell Scottrell', '');
