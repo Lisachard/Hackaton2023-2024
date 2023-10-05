@@ -12,7 +12,9 @@ body {
 }
 
 .links a {
-  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  font-size: medium;
   text-decoration: none;
   transition: 0.6s;
 }
