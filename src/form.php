@@ -15,7 +15,7 @@
 
             <input type="text" id="destination" name="destination" placeholder="Destination" required>
 
-            <input type="date" id="date" name="date" placeholder="Date">
+            <input type="date" id="date" name="date" placeholder="Date" required>
 
             <div class="passenger-counter">
                 <button type="button" id="decrease-passengers">-</button>
