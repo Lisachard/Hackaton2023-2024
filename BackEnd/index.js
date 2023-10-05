@@ -1,16 +1,21 @@
-require('dotenv').config()
-const { Client } = require('@googlemaps/google-maps-services-js');
 const express = require("express");
+const jwt = require("jsonwebtoken");
+const api = require("./routes/api");
 
-const client = new Client({});
 const app = express();
 const port = 3000;
 
-app.get("/:adress", function (req, res) {
-  res.send("test\n" + process.env.TEST);
-});
+const authenticateToken = function (req, res, next) {
+  //console.log("Middleware function called");
+  next(); // Call next() so Express will call the next middleware function in the chain.
+};
+
+app.use(express.json());
+
+app.use(authenticateToken);
+
+app.use("/api", api);
 
 app.listen(port, function () {
   console.log(`Example app listening on port ${port}!`);
-  console.log(process.env.GOOGLE_API_KEY);
 });
