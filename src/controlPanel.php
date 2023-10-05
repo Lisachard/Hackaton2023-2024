@@ -1,6 +1,6 @@
 <?php
-include 'form.php';
-include 'footer.php';
+include './components/rechercheTrajet.php';
+include './components/footer.php';
 ?>
 
 <!DOCTYPE html>
