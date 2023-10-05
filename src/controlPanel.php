@@ -1,5 +1,5 @@
 <?php
-include './components/rechercheTrajet.php';
+include './components/lookingForRides.php';
 include './components/footer.php';
 ?>
 

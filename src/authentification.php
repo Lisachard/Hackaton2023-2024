@@ -43,20 +43,20 @@
             e.preventDefault();
             document.getElementById("registerForm").style.display = "block";
             document.getElementById("loginForm").style.display = "none";
-            document.getElementById("loginButton").style.display = "block";
             document.getElementById("registerButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "block";
         });
 
         document.getElementById("loginButton").addEventListener("click", function (e) {
             e.preventDefault();
             document.getElementById("registerForm").style.display = "none";
             document.getElementById("loginForm").style.display = "block";
-            document.getElementById("loginButton").style.display = "none";
             document.getElementById("registerButton").style.display = "block";
+            document.getElementById("loginButton").style.display = "none";
         });
     </script>
 </body>
 
-<?php include 'footer.php' ?>
+<?php include './components/footer.php' ?>
 
 </html>

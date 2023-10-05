@@ -1,5 +1,5 @@
 <?php
-require_once './footer.php';
+require_once './components/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,4 @@ require_once './footer.php';
         </div>
         <div class="content flex"></div>
     </div>
-
-    <?php include 'footer.php' ?>
-
 </body>

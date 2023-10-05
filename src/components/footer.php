@@ -11,8 +11,8 @@
 
 <section class=footer>
     <div class="footerContainer">
-        <div class="links"><a href="#">Crédits</a></div>
-        <div class="links"><a href="#">Nudge © 2023 Tous droits réservés.</a></div>
+        <div class="links"><a href="./components/credits.php">Crédits</a></div>
+        <div class="links">Nudge © 2023 Tous droits réservés.</div>
     </div>
 </section>
 
