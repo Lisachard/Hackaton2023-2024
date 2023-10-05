@@ -26,19 +26,3 @@
         </div>
     </form>
 </body>
-
-</html>
-
-<script>
-    document.getElementById('increase-passengers').addEventListener('click', function () {
-        var passengersInput = document.getElementById('passagers');
-        passengersInput.value = parseInt(passengersInput.value) + 1;
-    });
-
-    document.getElementById('decrease-passengers').addEventListener('click', function () {
-        var passengersInput = document.getElementById('passagers');
-        if (parseInt(passengersInput.value) > 1) {
-            passengersInput.value = parseInt(passengersInput.value) - 1;
-        }
-    });
-</script>
