@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <h1>Recherche de Trajet</h1>
     <form action="traitement.php" method="post">
         <div class="flex">
             <input type="text" id="depart" name="depart" placeholder="Départ" required>
