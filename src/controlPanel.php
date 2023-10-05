@@ -27,71 +27,76 @@ include './components/footer.php';
                     rgb(179, 100, 224) 100%);
         }
 
-        .flex-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .bonhomme {
+      height: 25px;
+      width: 25px;
+    }
 
-        .bonhomme {
-            height: 50px;
-            width: 50px;
-            color: grey;
-        }
+    .vert {
+      filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    }
 
-        .vert {
-            color: palegreen;
-        }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 5px;
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+    }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid black;
-            border-radius: 5px;
-            width: 300px;
-            margin: 10px;
-            padding: 10px;
-        }
+    #carte {
+      height: 400px;
+      right: 0;
+      width: 50%;
+    }
+    .flex {
+      display: flex;
+      justify-content: space-evenly;
+    }
 
-        #carte {
-            height: 400px;
-            right: 0;
-            width: 50%;
-        }
-    </style>
+  </style>
 </head>
-
 <body>
-    <div id="carte"></div>
+  <div class="flex">
+  <div id="carte"></div>
 
-    <div class="flex-column">
-        <div class="card">
-            <span>Anne</span>
-            <span>Départ : 20 Boulevard du Général de Gaulle, 12/03/2020 12h</span>
-            <span>Destination : 6 Boulevard Adolphe Billault, 12/03/2020 12h05</span>
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-        </div>
-        <div class="card">
-            <span>Baptiste</span>
-            <span>Départ : 20 Boulevard du Général de Gaulle, 06/03/2014 17h</span>
-            <span>Destination : 14 Cité du Soleil Levant, 08/03/2016 18h30</span>
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-        </div>
-        <div class="card">
-            <span>Anne</span>
-            <span>Départ : 67ter Route Nationale, 12/06/2020 12h</span>
-            <span>Destination : 20 Boulevard du Général de Gaulle, 01/10/2052 16h</span>
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-            <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
-        </div>
+<div class="flex-column">
+  <div class="card">
+    <span>Anne</span>
+    <span>Départ : 20 Boulevard du Général de Gaulle, 12/03/2020 12h</span>
+    <span>Destination : 6 Boulevard Adolphe Billault, 12/03/2020 12h05</span>
+    <div class="flex">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme vert" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme vert" src="../Annex/Logo/person-svgrepo-com.svg">
     </div>
+  </div>
+  <div class="card">
+    <span>Batiste</span>
+    <span>Départ : 20 Boulevard du Général de Gaulle, 06/03/2014 17h</span>
+    <span>Destination : 14 Cité du Soleil Levant, 08/03/2016 18h30</span>
+    <div class="flex">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme vert" src="../Annex/Logo/person-svgrepo-com.svg">
+    </div>
+  </div>
+  <div class="card">
+    <span>Anne</span>
+    <span>Départ : 67ter Route Nationale, 12/06/2020 12h</span>
+    <span>Destination : Amien, 01/10/2052 16h</span>
+    <div class="flex">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme" src="../Annex/Logo/person-svgrepo-com.svg">
+    <img class="bonhomme vert" src="../Annex/Logo/person-svgrepo-com.svg">
+    </div>
+  </div>
+</div>
+  </div>
 </body>
 
 </html>
