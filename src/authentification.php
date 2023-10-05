@@ -12,7 +12,7 @@
 <body>
     <form id="registerForm" class="container" action="traitementAuth.php" method="post">
         <div class="flex">
-            <h1>Register magueule</h1>
+            <h1>Créer un compte</h1>
             <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
 
             <input type="text" id="firstName" name="firstName" placeholder="First name" required>
@@ -21,19 +21,20 @@
 
             <input type="text" id="password" name="password" placeholder="Password" required>
 
-            <button type="submit">S'inscrire</button>
             <button id="loginButton">Se connecter</button>
+            <button type="submit">S'inscrire</button>
 
         </div>
     </form>
 
     <form id="loginForm" class="container" action="traitement_connexion.php" method="post">
         <div class="flex">
-            <h1>Login magueule</h1>
+            <h1>Se connecter</h1>
             <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
             <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
-            <button type="submit">Se connecter</button>
+
             <button id="registerButton">S'inscrire</button>
+            <button type="submit">Se connecter</button>
         </div>
     </form>
     </div>

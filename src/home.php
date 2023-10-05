@@ -28,6 +28,7 @@ require_once './components/footer.php';
             </div>
             <div>
                 <a href="authentification.php" class="auth-button">S'authentifier</a>
+                <a href="./controlPanel.php" class="auth-button">Rechercher un trajet</a>
             </div>
         </div>
 
