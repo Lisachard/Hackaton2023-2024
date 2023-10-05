@@ -11,11 +11,11 @@
 
 <body>
     <div class="flex">
-        <button id="inscriptionButton">S'inscrire</button>
-        <button id="connexionButton">Se connecter</button>
+        <button id="registerButton">S'inscrire</button>
+        <button id="loginButton">Se connecter</button>
     </div>
 
-    <form class="container" action="traitementAuth.php" method="post">
+    <form id="registerForm" class="container" action="traitementAuth.php" method="post">
         <div class="flex">
             <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
 
@@ -39,13 +39,14 @@
     </div>
 
     <script>
-        document.getElementById("inscriptionButton").addEventListener("click", function () {
-            document.getElementById("inscriptionForm").style.display = "block";
+        document.getElementById("registerButton").addEventListener("click", function () {
+            document.getElementById("registerForm").style.display = "block";
             document.getElementById("loginForm").style.display = "none";
+            console.log(document.getElementById("registerForm"));
         });
 
-        document.getElementById("connexionButton").addEventListener("click", function () {
-            document.getElementById("inscriptionForm").style.display = "none";
+        document.getElementById("loginButton").addEventListener("click", function () {
+            document.getElementById("registerForm").style.display = "none";
             document.getElementById("loginForm").style.display = "block";
         });
     </script>

@@ -17,11 +17,9 @@ $options = array(
     )
 );
 
-// Création d'un contexte HTTP
 $context = stream_context_create($options);
 
 $url = urlencode('http://78.202.0.64:3000/api/rides');
-// Envoi des données à l'API et réception de la réponse
 $result = file_get_contents($url, false, $context);
 echo $result;
 ?>

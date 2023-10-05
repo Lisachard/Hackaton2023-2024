@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 199, 1) 0%,
+    rgb(179, 100, 224) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;

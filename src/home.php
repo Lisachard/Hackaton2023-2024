@@ -10,7 +10,7 @@ require_once './footer.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Main page</title>
+    <title>Home</title>
     <link rel="icon" type="image/png" href="/Annex/Logo/Nudge logo.png">
     <link rel="stylesheet" href="./assets/style/commonStyle.css">
     <link rel="stylesheet" href="./assets/style/home.css">
@@ -22,12 +22,12 @@ require_once './footer.php';
     <div class="header">
 
         <div class="inner-header flex">
-            <img src="/Annex/Logo/Nudge logo.png" alt="Salomé queen" class="logo">
+            <img src="../Annex/Logo/Nudge logo.png" alt="Salomé queen" class="logo">
             <h1>N U D G E</h1>
         </div>
 
         <div>
-            <a href="authentificationUser.php" class="auth-button">S'authentifier</a>
+            <a href="authentification.php" class="auth-button">S'authentifier</a>
         </div>
 
         <div>
