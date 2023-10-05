@@ -5,6 +5,8 @@ const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require('dotenv').config()
+
+const authenticateToken = require("../middlewares/authentificateToken");
 const utilities = require("../utilities");
 
 let con = mysql.createConnection({ //Necessary informations to connect to the database, doens't take .env variables for a reason
@@ -28,39 +30,53 @@ router.post("/signup", async (req, res) => {    //Route to create a new user
             res.send("User already exists");
         }
         else {
-            query = `INSERT INTO client (email, mot_de_passe, last_name, first_name) VALUES (` + mysql.escape(req.body.email) + `, ` + mysql.escape(bcrypt.hashSync(req.body.password, 8)) + `, ` + mysql.escape(req.body.name) + `, ` + mysql.escape(req.body.firstName) + `)`;
+            query = `INSERT INTO client (email, mot_de_passe, last_name, first_name) VALUES (` + mysql.escape(req.body.email) + `, ` + mysql.escape(bcrypt.hashSync(req.body.password, 8)) + `, ` + mysql.escape(req.body.lastName) + `, ` + mysql.escape(req.body.firstName) + `)`;
             con.query(query, function (err, result, fields) {
                 if (err) throw err;
             })
             console.log("User created");
-            res.send("User created");
+            res.status(201).send({
+                token: utilities.generateAccessToken(req.body.email)
+            }); // Replace by sending user informations and generated token
         }
     });
 });
 router.post("/signin", async (req, res) => {    //Route to connect an existing user
     //Connexion
+    let query = `SELECT * FROM client WHERE email = ` + mysql.escape(req.body.email);
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        if (result.length > 0) {
+            if (bcrypt.compareSync(req.body.password, result[0].mot_de_passe)) {
+                res.status(200).send({
+                    token: utilities.generateAccessToken(req.body.email)
+                }); // Replace by sending user informations and generated token
+            }
+            else {
+                res.send("Wrong password");
+            }
+        }
+        else {
+            res.send("User doesn't exist");
+        }
+    });
 });
-router.post("/publish", async (req, res) => {   //Route to publish a ride
+router.post("/publish", authenticateToken, async (req, res) => {   //Route to publish a ride
     // Parametre Adresse Heure date Nb de passagers Direction
-    let requiredParam = { "adresse": String, "heure": String, "date_trajet": String, "direction": Number }
-    if (!utilities.checkBodyParam(req.body, requiredParam)) res.status(400).send("Missing parameters");
-
-    else {
-        let query = `INSERT INTO trajet (adresse, heure, date_trajet, direction) VALUES (` + mysql.escape(req.body.adresse) + `, ` + mysql.escape(req.body.heure) + `, ` + mysql.escape(req.body.date_trajet) + `, ` + mysql.escape(req.body.direction) + `)`;
-        con.query(query, function (err, result, fields) {
-            if (err) throw err;
-            res.send("Trajet publié");
-        });
-    }
+    let query = `INSERT INTO trajet (adresse, heure, date_trajet, direction) VALUES (` + mysql.escape(req.body.adresse) + `, ` + mysql.escape(req.body.heure) + `, ` + mysql.escape(req.body.date_trajet) + `, ` + mysql.escape(req.body.direction) + `)`;
+    con.query(query, function (err, result, fields) {
+        if (err) throw err;
+        res.send("Trajet publié");
+    });
 });
-router.delete("/deleteRide", async (req, res) => {  //Route to delete a ride
+router.delete("/deleteRide", authenticateToken, async (req, res) => {  //Route to delete a ride
     // Supprimer un trajet
 });
-router.get("/rides", async (req, res) => {  //Route to get all rides
-    // Recuperer les trajets
+router.get("/rides", authenticateToken, async (req, res) => {  //Route to get all rides
+    let query = `SELECT * FROM trajet`;
     res.send("Trajets");
 });
-router.get("/ridesInsideRadius", async (req, res) => { //Route to get all rides from a user defined center point inside a radius
+router.get("/ridesInsideRadius", authenticateToken, async (req, res) => { //Route to get all rides from a user defined center point inside a radius
     // Recuperer les trajets dans un rayon
     let center = req.body.center;
     let radius = req.body.radius;
@@ -72,7 +88,7 @@ router.get("/ridesInsideRadius", async (req, res) => { //Route to get all rides 
     // res.send((distanceT).toString());
     res.send("Trajets dans un rayon");
 });
-router.get("/autocomplete", async (req, res) => { //Route used to autocomplete when searching an address, to be implemented in the front end
+router.get("/autocomplete", authenticateToken, async (req, res) => { //Route used to autocomplete when searching an address, to be implemented in the front end
     let input = req.body.input;
     client.placeAutocomplete({
         params: {

@@ -1,13 +1,12 @@
 const { Client } = require('@googlemaps/google-maps-services-js');
 const client = new Client({});
 
-module.exports = {
-  test: function (test) {
-    console.log("test");
-  },
+const jwt = require("jsonwebtoken");
+require('dotenv').config()
 
-  generateAccessToken: function (username) { // A function used to generate a token for the user
-    return jwt.sign(username, process.env.TOKEN_SECRET, { expiresIn: '1800s' });
+module.exports = {
+  generateAccessToken: function (email) { // A function used to generate a token for the user
+    return jwt.sign({email: email}, process.env.JWT_KEY, { expiresIn: '1h' });
   },
 
   distance: function (lat1, lon1, lat2, lon2) { //https://www.geeksforgeeks.org/program-distance-two-points-earth/ A function used to calculate the distance between two points on earth
@@ -51,11 +50,4 @@ module.exports = {
       console.log(e.response.data.error_message);
     })
   },
-
-  checkBodyParam: function (body, param) { // A function used in every route to check if the body contains all the required parameters
-    for (const [key, value] of Object.entries(param)) {
-      if (!Object.hasOwn(body, key)) return false;
-    }
-    return true;
-  }
 };

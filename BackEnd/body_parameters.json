@@ -1,10 +1,29 @@
 {
     "signup": {
-        "param1": "",
-        "param2": ""
+        "email": "",
+        "password": "",
+        "lastName": "",
+        "firstName": ""
+    },
+    "signin": {
+        "email": "",
+        "password": ""
+    },
+    "publish": {
+        "adresse": "",
+        "heure": "",
+        "date_trajet": "",
+        "direction": true
     },
     "rides": {
         "param1": "",
         "param2": ""
+    },
+    "ridesInsideRadius": {
+        "center": "",
+        "radius": 0
+    },
+    "autocomplete": {
+        "input": ""
     }
 }
