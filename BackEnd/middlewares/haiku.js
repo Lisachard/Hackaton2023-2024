@@ -1,8 +1,7 @@
-const haiku = function(req, res, next) {
+const haiku = function (req, res, next) {
     const drink = req.headers['drink'];
-    
+
     if (drink == 'coffee') {
-        console.log('Coffee');
         return res.status(418).send('I\'m a teapot');
     }
     else next();

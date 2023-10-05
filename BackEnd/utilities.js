@@ -6,7 +6,7 @@ require('dotenv').config()
 
 module.exports = {
   generateAccessToken: function (email) { // A function used to generate a token for the user
-    return jwt.sign({email: email}, process.env.JWT_KEY, { expiresIn: '1h' });
+    return jwt.sign({ email: email }, process.env.JWT_KEY, { expiresIn: '1h' });
   },
 
   distance: function (lat1, lon1, lat2, lon2) { //https://www.geeksforgeeks.org/program-distance-two-points-earth/ A function used to calculate the distance between two points on earth
