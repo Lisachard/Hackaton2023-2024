@@ -1,3 +1,7 @@
+<?php
+require_once './footer.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +14,7 @@
     <link rel="icon" type="image/png" href="/Annex/Logo/Nudge logo.png">
     <link rel="stylesheet" href="assets/style/commonStyle.css">
     <link rel="stylesheet" href="assets/style/mainPage.css">
+    <link rel="stylesheet" href="assets/style/footer.css">
 
 </head>
 
@@ -42,5 +47,7 @@
         </div>
         <div class="content flex"></div>
     </div>
+
+    <?php include 'footer.php' ?>
 
 </body>

@@ -1,22 +1,16 @@
-.ground {
-    min-height: 100vh;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .footer {
-    background: #faf5f5;
-    padding: 20px 0;
+  padding: 20px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
 }
 
-.footer_container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 20px;
+.footerContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: small;
 }
