@@ -5,31 +5,31 @@ include './components/footer.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ma Carte Google Maps</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
-  <script>
-    function initMap() {
-      var center = { lat: 47.205997467041016, lng: -1.538791537284851 };
-      var map = new google.maps.Map(document.getElementById('carte'), {
-        zoom: 16,
-        center: center
-      });
-    }
-  </script>
-  <style>
-    .flex-column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Carte Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var center = { lat: 47.205997467041016, lng: -1.538791537284851 };
+            var map = new google.maps.Map(document.getElementById('carte'), {
+                zoom: 16,
+                center: center
+            });
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(60deg,
+                    rgba(84, 58, 199, 1) 0%,
+                    rgb(179, 100, 224) 100%);
+        }
 
     .bonhomme {
       height: 25px;
       width: 25px;
-      filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
     }
 
     .vert {
@@ -40,7 +40,7 @@ include './components/footer.php';
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      background-color: white;
       border-radius: 5px;
       width: 300px;
       margin: 10px;
@@ -98,4 +98,5 @@ include './components/footer.php';
 </div>
   </div>
 </body>
+
 </html>

@@ -12,7 +12,7 @@
 <section class=footer>
     <div class="footerContainer">
         <div class="links"><a href="./components/credits.php">Crédits</a></div>
-        <div class="links">Nudge © 2023 Tous droits réservés.</div>
+        <div class="links"><p>Nudge © 2023 Tous droits réservés.</p></div>
     </div>
 </section>
 
