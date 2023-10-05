@@ -10,13 +10,9 @@
 </head>
 
 <body>
-    <div class="flex">
-        <button id="registerButton">S'inscrire</button>
-        <button id="loginButton">Se connecter</button>
-    </div>
-
     <form id="registerForm" class="container" action="traitementAuth.php" method="post">
         <div class="flex">
+            <h1>Register magueule</h1>
             <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
 
             <input type="text" id="firstName" name="firstName" placeholder="First name" required>
@@ -26,28 +22,37 @@
             <input type="text" id="password" name="password" placeholder="Password" required>
 
             <button type="submit">S'inscrire</button>
+            <button id="loginButton">Se connecter</button>
+
         </div>
     </form>
 
-    <form id="loginForm" action="traitement_connexion.php" method="post">
+    <form id="loginForm" class="container" action="traitement_connexion.php" method="post">
         <div class="flex">
+            <h1>Login magueule</h1>
             <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
             <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
             <button type="submit">Se connecter</button>
+            <button id="registerButton">S'inscrire</button>
         </div>
     </form>
     </div>
 
     <script>
-        document.getElementById("registerButton").addEventListener("click", function () {
+        document.getElementById("registerButton").addEventListener("click", function (e) {
+            e.preventDefault();
             document.getElementById("registerForm").style.display = "block";
             document.getElementById("loginForm").style.display = "none";
-            console.log(document.getElementById("registerForm"));
+            document.getElementById("loginButton").style.display = "block";
+            document.getElementById("registerButton").style.display = "none";
         });
 
-        document.getElementById("loginButton").addEventListener("click", function () {
+        document.getElementById("loginButton").addEventListener("click", function (e) {
+            e.preventDefault();
             document.getElementById("registerForm").style.display = "none";
             document.getElementById("loginForm").style.display = "block";
+            document.getElementById("loginButton").style.display = "none";
+            document.getElementById("registerButton").style.display = "block";
         });
     </script>
 </body>

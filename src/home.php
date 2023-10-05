@@ -22,13 +22,15 @@ require_once './footer.php';
     <div class="header">
 
         <div class="inner-header flex">
-            <img src="../Annex/Logo/Nudge logo.png" alt="Salomé queen" class="logo">
-            <h1>N U D G E</h1>
+            <div class="opif">
+                <img src="../Annex/Logo/Nudge logo.png" alt="Salomé queen" class="logo">
+                <h1>N U D G E</h1>
+            </div>
+            <div>
+                <a href="authentification.php" class="auth-button">S'authentifier</a>
+            </div>
         </div>
 
-        <div>
-            <a href="authentification.php" class="auth-button">S'authentifier</a>
-        </div>
 
         <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

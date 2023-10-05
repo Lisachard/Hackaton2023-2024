@@ -52,12 +52,19 @@ p {
 
 .flex {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 }
 
+.opif {
+  display: flex;
+  flex-direction: row;
+}
+
 .auth-button {
+  margin-bottom: 200px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
@@ -83,7 +90,7 @@ p {
 
 .content {
   position: relative;
-  height: 20vh;
+  height: 10vh;
   text-align: center;
   background-color: white;
 }

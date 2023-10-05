@@ -22,11 +22,11 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px; /* Ajout de marge en bas */
+  margin-bottom: 10px;
 }
 
 .button-container button {
-  margin: 0 10px; /* Ajout de marge entre les boutons */
+  margin: 0 10px;
 }
 
 .flex {
@@ -60,5 +60,9 @@ body {
 }
 
 #loginForm {
+  display: none;
+}
+
+#registerButton {
   display: none;
 }
