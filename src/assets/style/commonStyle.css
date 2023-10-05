@@ -11,7 +11,7 @@ body {
   overflow-y: hidden;
 }
 
-.links a {
+.links a, p {
   color: black;
   font-weight: bold;
   font-size: medium;
@@ -19,6 +19,6 @@ body {
   transition: 0.6s;
 }
 
-.links a:hover {
+.links a:hover, p:hover{
   color: gold;
 }
