@@ -10,9 +10,9 @@
         "password": ""
     },
     "publish": {
-        "adresse": "",
-        "heure": "",
-        "date_trajet": "",
+        "address": "",
+        "time": "",
+        "date": "",
         "direction": true
     },
     "rides": {},

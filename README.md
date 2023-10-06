@@ -36,12 +36,20 @@ The group is thankfull for `PIAUGER Paul` and `ROLLAND Alexandre`'s advices and 
 # Instructions : 
 
 - Git clone the repository
+  
+- Install NodeJs from the official website : https://nodejs.org/fr/download
+  
+- Generate the environment variable file :
+```
+node generate_env.js YOU_GOOGLE_MAPS_API_KEY
+```
+If you don't have a Google maps API key, just enter your name.
+  
+- Create a new database named 'Nudge' and import the 'client' and 'trajet'
 
-- Project setup :
-```
-npm install
-```
-- Launch xamp server :
+- Complete the .env file with your database informations
+  
+- Start the Nudge API :
 ```
 node index.js
 ```
@@ -58,4 +66,8 @@ Final step... Enjoy ! 😄
 
 *Hackathon Project - 2023*
 
+<<<<<<< HEAD
 **-------------------------**
+=======
+**-------------------------**
+>>>>>>> c6b97692fb9096270faa710534741c0fa7158d61
