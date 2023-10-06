@@ -36,12 +36,19 @@ The group is thankfull for `PIAUGER Paul` and `ROLLAND Alexandre`'s advices and 
 # Instructions : 
 
 - Git clone the repository
-
+  
+- Install NodeJs from the official website : https://nodejs.org/fr/download
+  
 - Project setup :
+  
 ```
-npm install
+cd BackEnd\
 ```
-- Launch xamp server :
+- Generate environnment variable file
+```
+node generate_env.js YOUR_GOOGLE_MAPS_API_KEY
+```
+- Launch api :
 ```
 node index.js
 ```
