@@ -7,34 +7,48 @@
     <title>Authentification</title>
     <link rel="stylesheet" href="./assets/style/commonStyle.css">
     <link rel="stylesheet" href="./assets/style/authentification.css">
+    <link rel="stylesheet" href="./assets/style/footer.css">
 </head>
 
 <body>
     <form id="registerForm" class="container" action="traitementAuth.php" method="post">
         <div class="flex">
             <h1>Créer un compte</h1>
-            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+            <div>
+                <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
 
-            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                <input type="text" id="firstName" name="firstName" placeholder="First name" required>
 
-            <input type="mail" id="email" name="email" placeholder="Email" required>
 
-            <input type="text" id="password" name="password" placeholder="Password" required>
 
-            <button id="loginButton">Se connecter</button>
-            <button type="submit">S'inscrire</button>
+                <input type="mail" id="email" name="email" placeholder="Email" required>
 
+                <input type="text" id="password" name="password" placeholder="Password" required>
+
+
+                <button id="loginButton">Se connecter</button>
+                <button type="submit">S'inscrire</button>
+            </div>
+
+        </div>
         </div>
     </form>
 
     <form id="loginForm" class="container" action="traitement_connexion.php" method="post">
         <div class="flex">
             <h1>Se connecter</h1>
-            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
-            <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
 
-            <button id="registerButton">S'inscrire</button>
-            <button type="submit">Se connecter</button>
+            <div>
+                <span class="containInput">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+                </span>
+                <span class="containeButton">
+                    <button id="registerButton">S'inscrire</button>
+                    <button type="submit">Se connecter</button>
+                </span>
+
+            </div>
         </div>
     </form>
     </div>
@@ -58,6 +72,9 @@
     </script>
 </body>
 
-<?php include './components/footer.php' ?>
+<?php
+include './components/footer.php';
+include './components/backHome.php';
+?>
 
 </html>

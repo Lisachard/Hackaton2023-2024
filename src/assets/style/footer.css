@@ -1,3 +1,17 @@
+.links a,
+p {
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  text-decoration: none;
+  transition: 0.6s;
+}
+
+.links a:hover,
+p:hover {
+  color: gold;
+}
+
 .footer {
   padding: 20px 0;
   position: absolute;

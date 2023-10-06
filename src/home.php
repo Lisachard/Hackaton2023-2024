@@ -1,5 +1,6 @@
 <?php
-require_once './components/footer.php';
+include './components/footer.php';
+include './components/backHome.php  ';
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ require_once './components/footer.php';
             </div>
             <div>
                 <a href="authentification.php" class="auth-button">S'authentifier</a>
-                <a href="./controlPanel.php" class="auth-button">Rechercher un trajet</a>
+                <a href="controlPanel.php" class="auth-button">Rechercher un trajet</a>
             </div>
         </div>
 

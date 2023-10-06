@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(60deg,
                     rgba(84, 58, 199, 1) 0%,
-                    rgb(179, 100, 224) 100%);   
+                    rgb(179, 100, 224) 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,6 +44,7 @@
 </head>
 
 <body>
+    <?php include "components/backHome.php" ?>
     <div class="container">
         <div class="card">
             <p>Pierre LEPESANT</p>

@@ -1,6 +1,7 @@
 <?php
-include './components/lookingForRides.php';
+require_once './components/lookingForRides.php';
 include './components/footer.php';
+include './components/backHome.php  ';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,8 @@ include './components/footer.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Carte Google Maps</title>
+    <link rel="stylesheet" href="./assets/style/footer.css">
+    <title>Carte Google Maps</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
     <script>
         function initMap() {
@@ -58,6 +60,8 @@ include './components/footer.php';
         .flexy {
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
+            transform: translateY(10%);
         }
     </style>
 </head>

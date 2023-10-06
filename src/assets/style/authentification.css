@@ -33,6 +33,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
+}
+
+.containeButton {
+  display: flex;
+  justify-content: space-around;
+}
+
+.containInput {
+  display: flex;
+  justify-content: space-around;
 }
 
 .flex input[type="text"],
