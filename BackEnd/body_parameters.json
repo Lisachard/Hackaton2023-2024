@@ -1,0 +1,27 @@
+{
+    "signup": {
+        "email": "",
+        "password": "",
+        "lastName": "",
+        "firstName": ""
+    },
+    "signin": {
+        "email": "",
+        "password": ""
+    },
+    "publish": {
+        "address": "",
+        "time": "",
+        "date": "",
+        "direction": true
+    },
+    "rides": {},
+    "ridesInsideRadius": {
+        "center": "",
+        "radius": 0
+    },
+    "autocomplete": {
+        "input": ""
+    },
+    "user": {}
+}
