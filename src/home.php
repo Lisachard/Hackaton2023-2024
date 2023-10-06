@@ -1,6 +1,5 @@
 <?php
 include './components/footer.php';
-include './components/backHome.php  ';
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,6 @@ include './components/backHome.php  ';
                 <a href="controlPanel.php" class="auth-button">Rechercher un trajet</a>
             </div>
         </div>
-
 
         <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
