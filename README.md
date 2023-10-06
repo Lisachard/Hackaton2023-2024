@@ -44,7 +44,11 @@ The group is thankfull for `PIAUGER Paul` and `ROLLAND Alexandre`'s advices and 
 node generate_env.js YOU_GOOGLE_MAPS_API_KEY
 ```
 If you don't have a Google maps API key, just enter your name
+  
+- Create a new database nammed 'client' and import the 'client' and 'trajet'
 
+- Complete the .env file with your database informations
+  
 - Start the Nudge API :
 ```
 node index.js
